@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Habitilist.Views.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/CSS/style.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="Home.aspx">
+                <img src="../Assets/Logo.png" width="60px"/>
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="nav-item">
+                <div>
+                    <a href="ToDoListPage.aspx">ToDoList</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <div>
+                    <a href="HabitPage.aspx">Habit</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <div>
+                    <a href="Profile.aspx">Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="head"/>
+    <br />
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <div class="footer">
+        <p class="footerTxt"> © 2021.  All Rights Reserved.</p> 
+        <div class="social-media">
+            <a href="https://instagram.com">
+            <img src="../Assets/IGLogo.png" alt="" width="40px">
+            </a>
+            <a href="https://twitter.com">
+                <img src="../Assets/pngkey.com-facebook-instagram-logo-png-2345598.png" alt="" width="40px">
+            </a>
+        </div>
+        <p class="footerTxt"> Habitilist</p>
+    </div>
+</body>
+</html>

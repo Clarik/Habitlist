@@ -1,0 +1,550 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.header {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.header-left{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+
+.header-right{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-right a{
+    border-radius: 10px;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+}
+
+.header-right .nav-item{
+    border-radius: 10px;
+    width: 34%;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    transition: 0.4s;
+}
+
+.header-right .nav-item:hover{
+    background-color: #232323;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.header-right .nav-item:hover a {
+    color: #f0b72c;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f0b72c;
+    font-size: medium;
+    font-family: 'Oxygen', sans-serif;
+    background-color: #232323;
+    text-align: center;
+}
+
+.social-media img {
+    padding: 0 8px 0 8px;
+}
+
+.head{
+    height: 2px;
+    width: 100%;
+}
+
+/*Home*/
+
+h1{
+    font-size: 45px;
+    margin: 0 0 20px 50px;
+}
+
+hr{
+    width: 93%;
+    height: 5px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tdl-container{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.to-do-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 150px;
+    background-color: #232323;
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgb(240, 183, 44, 0.9);
+    margin: 0 10px 10px 10px;
+    transition:0.4s;
+}
+
+.to-do-list-title{
+    width: 80%;
+    text-align: center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.tdl-desc{
+    position:absolute;
+    visibility: hidden;
+    width:250px;
+    text-align: center;
+    color: white;
+    font-weight:400;
+    font-size: 15px;
+}
+
+.tdl-desc1{
+    width:250px;
+}
+
+.to-do-list-item:hover{
+    width: 400px;
+    height: 200px;
+    transition: 0.4s;
+    justify-content: space-evenly;
+}
+
+.to-do-list-item:hover .tdl-desc{
+    position:initial;
+    visibility: visible;
+    width: 250px;
+}
+
+.to-do-list-item:hover .to-do-list-title{
+    margin-bottom: -20px;
+}
+
+.to-do-list-item:hover .tdl-detail{
+    margin-top: -20px;
+}
+
+.tdl-detail{
+    text-align: center;
+    color: white;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-inspect, .btn-insert {
+    margin: 40px 0 40px 0;
+    padding: 8px 0 8px 0;
+    width: 300px;
+    border-radius: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    border: 3px solid #f0b72c;
+    transition: 0.4s;
+}
+
+.btn-inspect:hover, .btn-insert:hover {
+    background-color: #f0b72c;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+}
+
+.isEmpty{
+    color: black;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+/*ToDoList Page*/
+
+.labels label {
+    width: 20%;
+    text-align: center;
+    background-color: #232323;
+    color: #f0b72c;
+    border-radius: 10px;
+    margin: 0 5px 0 5px;
+    padding: 10px 0 10px 0;
+}
+
+.labels {
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#label-name{
+    width: 19%;
+}
+
+.tdl-container1 {
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tdl-label {
+    width: 20%;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
+
+.tdl-label-name {
+    width: 19%;
+    text-align: center;
+}
+
+.action-buttons{
+    width:20%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    margin: 20px 5px 20px 5px;
+    padding: 8px 0 8px 0;
+    width: 70px;
+    border-radius: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    border: 3px solid #f0b72c;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: #f0b72c;
+    color: white;
+}
+
+.line-break{
+    width: 98%;
+    height: 2px;
+    background-color: #232323;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.habit-container a{
+    color: #f0b72c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.habit-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+}
+
+.habit-item {
+    margin: 10px 10px 10px 10px;
+    width: 84%;
+    height: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    border-radius: 10px;
+    background-color: #232323;
+}
+
+.habit-desc{
+    display: flex;
+    font-size: 20px;
+    flex-direction:column;
+    justify-content: center;
+    height: 100px;
+    width: 50%;
+}
+
+.habit-desc-name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.habit-action a{
+    font-size: 30px;
+}
+
+.prof-container{
+    position: absolute;
+    top: 33%;
+    left: 40%;
+    margin: 200px 0 200px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile{
+    font-size: 25px;
+    border: 2px solid #232323;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.95);
+}
+
+.username {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.email{
+    margin-top: -35px;
+    font-size: 18px;
+}
+
+.pr{
+    width: 100px;
+}
+
+.lg{
+    background-color: #232323;
+    color: white;
+    border: 2px solid #232323;
+}
+
+.lg:hover{
+    border: 2px solid #f0b72c;
+}
+
+.bg-prof{
+    margin-top: -20px;
+    margin-bottom: 20px;
+    height: 850px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../Assets/back-school-vector-illustration-design-with-funny-school-characters_40453-1693.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+/*Habit Page*/
+
+.habit-labels{
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.habit-target {
+    border-radius: 20px;
+    border: 3px solid #232323;
+    background-color: #232323;
+    color: white;
+    width: 150px;
+    height: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.habit-details{
+    border-radius: 20px;
+    border: 3px solid #232323;
+    height: 150px;
+    width: 60%;
+    background-color: #f0b72c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.habit-page-container{
+    margin: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.action-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+}
+
+.action-button .btn-delete{
+    height:50px;
+    width: 150px;
+    background-color: #232323;
+    color: white;
+    border: 3px solid #232323;
+    border-radius: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-delete:hover{
+    background-color: #f0b72c;
+    transition: 0.4s;
+    border: 3px solid #f0b72c;
+    color: black;
+    cursor: pointer;
+}
+
+.name-field-container{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.points-field-container{
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+#target{
+    width: 150px;
+}
+
+#details{
+    width: 60%;
+}
+
+#action{
+    width: 150px;
+}
+
+.btn-insert-habit{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/*Insert ToDoList*/
+
+.tdl-insert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.field-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ins-field{
+    margin-bottom: 10px; 
+}
+
+.textbox {
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 35px;
+    width: 200px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    outline: none;
+}
+
+.desc-box{
+    height: 100px;
+    text-align:center;
+}
+
+/*Insert Habit*/
+
+.habit-insert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Update Profile*/
+
+.bg-update-profile{
+    margin-bottom: 40px;
+    height: 800px;
+    background-image: url(../Assets/Doodle_cakep.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat:no-repeat;
+    background-size: 800px 800px;
+}
+
+.update-profile{
+    width: 500px;
+    height: 650px;
+    display: flex;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    position: absolute;
+    top: 41%;
+    left: 34%
+}
+
+.label6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    width: 400px;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
+
+
+
+
+
+
+

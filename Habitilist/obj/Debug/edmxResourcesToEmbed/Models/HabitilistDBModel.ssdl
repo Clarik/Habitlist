@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HabitilistDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Habit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Target" Type="date" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Points" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HabitDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HabitId" Type="int" />
+    <Property Name="Day" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ToDoList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Deadline" Type="date" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="Points" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Points" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Habit__UserId__286302EC">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Habit" Type="Self.Habit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habit">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HabitDeta__Habit__2B3F6F97">
+    <End Role="Habit" Type="Self.Habit" Multiplicity="0..1" />
+    <End Role="HabitDetails" Type="Self.HabitDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HabitDetails">
+        <PropertyRef Name="HabitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ToDoList__UserId__25869641">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ToDoList" Type="Self.ToDoList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToDoList">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HabitilistDBModelStoreContainer">
+    <EntitySet Name="Habit" EntityType="Self.Habit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HabitDetails" EntityType="Self.HabitDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ToDoList" EntityType="Self.ToDoList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Habit__UserId__286302EC" Association="Self.FK__Habit__UserId__286302EC">
+      <End Role="User" EntitySet="User" />
+      <End Role="Habit" EntitySet="Habit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HabitDeta__Habit__2B3F6F97" Association="Self.FK__HabitDeta__Habit__2B3F6F97">
+      <End Role="Habit" EntitySet="Habit" />
+      <End Role="HabitDetails" EntitySet="HabitDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ToDoList__UserId__25869641" Association="Self.FK__ToDoList__UserId__25869641">
+      <End Role="User" EntitySet="User" />
+      <End Role="ToDoList" EntitySet="ToDoList" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
